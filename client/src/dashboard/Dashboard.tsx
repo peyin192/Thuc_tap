@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import logo from "../img/Logo.png";
+import logo from "../img/mankailogo.png";
 import searchIcon from "../img/search-normal.png";
 import avatarImg from "../img/Avatar.png";
 import notification from "../img/notification.png";
@@ -14,35 +14,25 @@ import iconHotline from "../img/Featured icon (1).png";
 import iconEmail from "../img/Featured icon (2).png";
 import iconfacebook from "../img/facebook.png";
 import iconyoutube from "../img/youtube.png";
+import { useNavigate } from "react-router-dom";
+
+// type Item = {
+//   title: string;
+//   desc: string;
+//   icon: string;
+// };
 
 export default function Dashboard() {
-  const items = [
-    {
-      title: "LMS",
-      desc: "Nền tảng quản lý học tập trực tuyến giúp tổ chức, theo dõi, và đánh giá các khóa học và tài liệu học tập",
-      icon: logoLms,
-    },
-    {
-      title: "E-Learning",
-      desc: "Phương pháp học tập trực tuyến thông qua các thiết bị điện tử, cung cấp sự linh hoạt và tiện lợi cho người học",
-      icon: logoElearning,
-    },
-    {
-      title: "Bài kiểm tra",
-      desc: "Các bài kiểm tra được thiết kế để đánh giá trình độ và hiệu biết của người học trong một lĩnh vực cụ thể",
-      icon: logoExam,
-    },
-    {
-      title: "Quản lý đào tạo",
-      desc: "Công cụ tạo và quản lý các bài kiểm tra trực tuyến giúp giáo viên đánh giá kiến thức của học sinh một cách dễ dàng và nhanh chóng",
-      icon: logoTrain,
-    },
-  ];
-
+  const navigate = useNavigate();
   return (
     <div className="home-container">
       <header className="header">
-        <img src={logo} alt="Logo" className="logo" />
+        <img
+          src={logo}
+          alt="Logo"
+          className="logo"
+          onClick={() => navigate("/")}
+        />
         <div className="header-actions">
           <img src={searchIcon} alt="Search" className="icon" />
           <img src={notification} alt="Notification" className="icon" />
@@ -64,16 +54,51 @@ export default function Dashboard() {
       <h2 className="section-title">Hệ thống học tập</h2>
 
       <div className="grid-container">
-        {items.map((item, i) => (
-          <div key={i} className="card">
-            <div className="card-icon">
-              <img src={item.icon} alt={item.title} />
-            </div>
-            <h3 className="card-title">{item.title}</h3>
-            <p className="card-desc">{item.desc}</p>
+        <div className="card">
+          <div className="card-icon">
+            <img src={logoLms} alt="LMS" />
           </div>
-        ))}
+          <h3 className="card-title">LMS</h3>
+          <p className="card-desc">
+            Nền tảng quản lý học tập trực tuyến giúp tổ chức, theo dõi, và đánh
+            giá các khóa học và tài liệu học tập
+          </p>
+        </div>
+
+        <div className="card" onClick={() => navigate("/HomePage")}>
+          <div className="card-icon">
+            <img src={logoElearning} alt="E-Learning" />
+          </div>
+          <h3 className="card-title">E-Learning</h3>
+          <p className="card-desc">
+            Phương pháp học tập trực tuyến thông qua các thiết bị điện tử, cung
+            cấp sự linh hoạt và tiện lợi cho người học
+          </p>
+        </div>
+
+        <div className="card" onClick={() => navigate("")}>
+          <div className="card-icon">
+            <img src={logoExam} alt="Bài kiểm tra" />
+          </div>
+          <h3 className="card-title">Bài kiểm tra</h3>
+          <p className="card-desc">
+            Các bài kiểm tra được thiết kế để đánh giá trình độ và hiệu biết của
+            người học trong một lĩnh vực cụ thể
+          </p>
+        </div>
+
+        <div className="card">
+          <div className="card-icon">
+            <img src={logoTrain} alt="Quản lý đào tạo" />
+          </div>
+          <h3 className="card-title">Quản lý đào tạo</h3>
+          <p className="card-desc">
+            Công cụ tạo và quản lý các bài kiểm tra trực tuyến giúp giáo viên
+            đánh giá kiến thức của học sinh một cách dễ dàng và nhanh chóng
+          </p>
+        </div>
       </div>
+
       <footer className="site-footer" role="contentinfo">
         <div className="footer-top">
           <img
@@ -91,7 +116,7 @@ export default function Dashboard() {
             <h3 className="col-title">THÔNG TIN LIÊN HỆ</h3>
             <ul className="contact-list">
               <li>
-                <img src={iconAddress} alt="Search" className="icon" />
+                <img src={iconAddress} alt="Address" className="icon" />
                 <div>
                   <strong>Địa chỉ:</strong>
                   <div>
@@ -100,14 +125,14 @@ export default function Dashboard() {
                 </div>
               </li>
               <li>
-                <img src={iconHotline} alt="Search" className="icon" />
+                <img src={iconHotline} alt="Hotline" className="icon" />
                 <div>
                   <strong>Hotline:</strong>
                   <div>0835 662 538</div>
                 </div>
               </li>
               <li>
-                <img src={iconEmail} alt="Search" className="icon" />
+                <img src={iconEmail} alt="Email" className="icon" />
                 <div>
                   <strong>Email:</strong>
                   <div>support@mankai.edu.vn</div>
@@ -120,14 +145,14 @@ export default function Dashboard() {
             <h3 className="col-title">THEO DÕI CHÚNG TÔI TẠI</h3>
             <div className="social-icons" aria-hidden>
               <a href="#" className="social-btn" aria-label="Facebook">
-                <img src={iconfacebook} />
+                <img src={iconfacebook} alt="Facebook" />
               </a>
               <a
                 href="https://www.youtube.com/@RikkeiEducation"
                 className="social-btn"
                 aria-label="Youtube"
               >
-                <img src={iconyoutube} />
+                <img src={iconyoutube} alt="Youtube" />
               </a>
             </div>
           </div>

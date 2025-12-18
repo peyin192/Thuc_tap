@@ -1,4 +1,4 @@
-import "./Article.css";
+import "./ArticleDetails.css";
 import logo from "../img/mankailogo.png";
 import searchIcon from "../img/search-normal.png";
 import avatarImg from "../img/Avatar.png";
@@ -11,25 +11,13 @@ import iconfacebook from "../img/facebook.png";
 import iconyoutube from "../img/youtube.png";
 import iconHome from "../img/home.png";
 import iconBook from "../img/book (1).png";
-import clock from "../img/clock2.png";
-import iconBook2 from "../img/book2.png";
-import banner from "../img/back ground.png";
+import imgArticleDetails from "../img/anhbaiviet1.png";
+import imgArticleDetails2 from "../img/anhbaiviet2.png";
+import imgArticleDetails3 from "../img/anhbaiviet3.png";
 import { useNavigate } from "react-router-dom";
 
-export default function Article() {
+export default function ArticleDetails() {
   const navigate = useNavigate();
-  const blogs = Array.from({ length: 9 }, (_, i) => ({
-    id: i + 1,
-    category: "Front-End",
-    title: "Authentication & Authorization trong ReactJS",
-    description:
-      "Chào bạn! Nếu bạn đã làm việc với React, chắc hẳn bạn đã biết tới Dev Mode...",
-    time: "15-17 phút đọc",
-    views: "8 tháng trước",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800",
-  }));
-
   return (
     <div className="home-container">
       <header className="header">
@@ -47,7 +35,7 @@ export default function Article() {
             >
               <img src={iconHome} alt="Home" /> Trang chủ
             </span>
-            <span className="nav-item">
+            <span className="nav-item" onClick={() => navigate("/Article")}>
               <img src={iconBook} alt="Blog" /> Bài viết
             </span>
           </nav>
@@ -56,59 +44,83 @@ export default function Article() {
         <div className="header-actions">
           <img src={searchIcon} alt="Search" className="icon" />
           <img src={notification} alt="Notification" className="icon" />
-          <img src={avatarImg} alt="Avatar" className="avatar" />
+          <img src={avatarImg} className="avatar" alt="Avatar" />
         </div>
       </header>
 
-      <div className="blog-page">
-        <div className="blog-banner">
-          <img src={banner} alt="Banner" />
-          <p className="breadcrumb">Trang chủ / Bài viết</p>
-          <h1>Bài viết</h1>
+      <div className="article-wrapper">
+        <div className="breadcrumb">
+          Trang chủ / Bài viết / <span>Chi tiết bài viết</span>
         </div>
 
-        <div className="blog-container">
-          <div className="blog-header">
-            <h3>
-              Tất cả bài viết <span>(120)</span>
-            </h3>
-            <select>
-              <option>Sắp xếp: Front-End</option>
-              <option>Back-End</option>
-            </select>
-          </div>
-          <hr />
+        <h1 className="article-title">
+          Authentication & Authorization trong ReactJS
+        </h1>
 
-          <div className="blog-grid">
-            {blogs.map((item) => (
-              <div
-                className="blog-card"
-                key={item.id}
-                onClick={() => navigate("/ArticleDetails")}
-              >
-                <img src={item.image} alt={item.title} />
-                <div className="blog-card-content">
-                  <span className="tag">{item.category}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.description}</p>
-                  <div className="blog-meta">
-                    <span className="meta-item">
-                      <img src={clock} alt="Views" className="meta-icon" />{" "}
-                      {item.views}
-                    </span>
-                    <span className="meta-item">
-                      <img
-                        src={iconBook2}
-                        alt="Reading time"
-                        className="meta-icon"
-                      />{" "}
-                      {item.time}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="article-meta">
+          <span className="tag">Front-End</span>
+          <span>• 8 tháng trước</span>
+          <span>• 10–15 phút đọc</span>
+        </div>
+
+        <div className="article-content">
+          <h3>Ornare eu elementum felis porttitor nunc</h3>
+          <p>
+            Ornare eu elementum felis porttitor nunc tortor. Ornare neque
+            accumsan metus nulla ultricies maecenas rhoncus ultrices cras.
+            Vestibulum varius adipiscing ipsum pharetra. Semper ullamcorper
+            malesuada ut auctor scelerisque. Sit morbi pellentesque adipiscing
+            pellentesque habitant ullamcorper est. In dolor sit platea faucibus
+            ut dignissim pulvinar.
+          </p>
+
+          <img
+            src={imgArticleDetails}
+            alt="Article Detail 1"
+            className="article-image"
+          />
+
+          <h4>Lorem ipsum dolor sit amet consectetur :</h4>
+          <p>
+            Ornare eu elementum felis porttitor nunc tortor. Ornare neque
+            accumsan metus nulla ultricies maecenas rhoncus ultrices cras.
+          </p>
+
+          <h4>
+            Semper lacinia non lectus mauris sed eget scelerisque facilisis
+            donec:
+          </h4>
+          <ul>
+            <li>
+              Tellus molestie leo gravida feugiat. Ipsum est lacus lobortis
+              accumsan eget.
+            </li>
+            <li>
+              Sit parturient viverra ut cursus. Vestibulum non et ullamcorper
+              fermentum fringilla est.
+            </li>
+            <li>
+              A nullam diam rhoncus pellentesque eleifend risus ut libero.
+            </li>
+          </ul>
+
+          <img
+            src={imgArticleDetails2}
+            alt="Article Detail 2"
+            className="article-image"
+          />
+
+          <h3>Vestibulum varius adipiscing</h3>
+          <p>
+            Ornare eu elementum felis porttitor nunc tortor. Ornare neque
+            accumsan metus nulla ultricies maecenas rhoncus ultrices cras.
+          </p>
+
+          <img
+            src={imgArticleDetails3}
+            alt="Article Detail 3"
+            className="article-image"
+          />
         </div>
       </div>
 
