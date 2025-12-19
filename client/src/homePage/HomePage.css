@@ -1,11 +1,13 @@
-.home-container {
+/* ===================== CONTAINER ===================== */
+.homepage-container {
   width: 100%;
   min-height: 100vh;
   background: #ffffff;
   font-family: Arial, sans-serif;
 }
 
-.header {
+/* ===================== HEADER ===================== */
+.homepage-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,26 +16,24 @@
   background: #fff;
 }
 
-/* Logo + menu sát nhau */
-.header-left {
+.homepage-header-left {
   display: flex;
   align-items: center;
-  gap: 12px; /* GIẢM MẠNH khoảng cách */
+  gap: 12px;
 }
 
-.logo {
+.homepage-logo {
   height: 40px;
-  margin-right: 4px; /* sát hơn nữa nếu cần */
+  margin-right: 4px;
   cursor: pointer;
 }
 
-/* Menu */
-.nav {
+.homepage-nav {
   display: flex;
-  gap: 16px; /* khoảng cách giữa Trang chủ & Bài viết */
+  gap: 16px;
 }
 
-.nav-item {
+.homepage-nav-item {
   font-size: 15px;
   font-weight: 500;
   color: #555;
@@ -41,363 +41,122 @@
   padding: 4px 0;
 }
 
-.nav-item.active {
+.homepage-nav-item.active {
   color: #dd673c;
   font-weight: 600;
 }
 
-/* Bên phải */
-.header-actions {
+.homepage-header-actions {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-.icon {
+.homepage-icon {
   width: 22px;
   height: 22px;
 }
 
-.avatar {
+.homepage-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
 }
 
-:root {
-  --orange-1: #e4542b;
-  --orange-2: #d9532d;
-  --orange-3: #f07b4b;
-  --text-light: rgba(255, 255, 255, 0.95);
-  --muted-light: rgba(255, 255, 255, 0.85);
-}
-
-.site-footer {
-  color: var(--text-light);
-  background: linear-gradient(
-    135deg,
-    var(--orange-1) 0%,
-    var(--orange-2) 45%,
-    var(--orange-3) 100%
-  );
-  padding: 36px 20px;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-}
-
-.footer-top {
-  text-align: center;
-  max-width: 1100px;
-  margin: 0 auto 24px;
-  position: relative;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.footer-logo {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  border-radius: 8px;
-  padding: 6px;
-  margin: 0 auto 10px;
-  display: inline-block;
-}
-
-.footer-title {
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: var(--muted-light);
-  font-weight: 600;
-  padding: 6px 12px;
-}
-
-.footer-body {
-  max-width: 1100px;
-  margin: 26px auto 12px;
-  display: grid;
-  grid-template-columns: 1fr 220px 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.col-title {
-  margin: 0 0 12px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 700;
-  letter-spacing: 0.6px;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.contact-list li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  font-size: 13px;
-  color: var(--muted-light);
-}
-.contact-list .icon {
-  font-size: 22px;
-  margin-top: 2px;
-  flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.social {
-  text-align: center;
-}
-.social-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6px;
-}
-.social-btn {
-  width: 44px;
-  height: 44px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: transform 0.15s ease, background 0.15s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-.social-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.quote blockquote {
-  margin: 0;
-  padding-left: 16px;
-  border-left: 3px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.92);
-  font-style: italic;
-  font-size: 14px;
-  line-height: 1.45;
-}
-.quote cite {
-  display: block;
-  margin-top: 10px;
-  text-align: right;
-  font-style: normal;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.footer-bottom {
-  max-width: 1100px;
-  margin: 18px auto 0;
-  text-align: left;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 12px;
-}
-
-@media (max-width: 880px) {
-  .footer-body {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .footer-top {
-    padding-bottom: 8px;
-  }
-  .footer-bottom {
-    text-align: center;
-  }
-  .quote blockquote {
-    text-align: left;
-  }
-}
-.tb-container {
+/* ===================== THE BANNER ===================== */
+.homepage-tb-container {
   width: 100%;
   padding: 60px 80px;
   background: linear-gradient(#ff875d, #f15b3c);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
   color: #fff;
 }
 
-/* LEFT PART */
-.tb-left {
+.homepage-tb-left {
   width: 50%;
-  position: relative;
 }
 
-.tb-quote {
-  font-size: 0px;
+.homepage-tb-quote {
+  font-size: 32px;
   font-weight: bold;
   opacity: 0.5;
-  margin-bottom: 10px;
 }
 
-.tb-quote right {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.tb-text {
-  line-height: 1.6;
+.homepage-tb-text {
   font-size: 17px;
+  line-height: 1.6;
   width: 90%;
 }
 
-/* RIGHT PART */
-.tb-right {
+.homepage-tb-right {
   width: 50%;
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.tb-name {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  background: #ffd54f;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-  color: #000;
-  z-index: 5;
-}
-
-/* Teacher Image */
-.tb-image {
+.homepage-tb-image {
   width: 480px;
-  z-index: 2;
-  position: relative;
 }
 
-/* Floating Info Box */
-.tb-info-box {
-  position: absolute;
-  bottom: 40px;
-  right: 90px;
-  background: white;
-  color: #222;
-  padding: 16px 22px;
-  border-radius: 14px;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
-  width: 230px;
-  z-index: 3;
-}
-
-.tb-info-box ul {
-  margin: 0;
-  padding: 0;
-  list-style: disc;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .tb-container {
-    flex-direction: column;
-    padding: 40px;
-  }
-
-  .tb-left,
-  .tb-right {
-    width: 100%;
-    text-align: center;
-  }
-
-  .tb-info-box {
-    right: 50%;
-    transform: translateX(50%);
-  }
-}
-
-.course-container {
-  width: 100%;
+/* ===================== COURSE ===================== */
+.homepage-course-container {
   padding: 40px 80px;
-  box-sizing: border-box;
 }
 
-.course-title {
+.homepage-course-title {
   text-align: center;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 40px;
 }
 
-/* GRID */
-.course-grid {
+.homepage-course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
-/* CARD */
-.course-card {
+.homepage-course-card {
   background: white;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: 0.25s;
+  cursor: pointer;
 }
 
-.course-card:hover {
+.homepage-course-card:hover {
   transform: translateY(-6px);
 }
 
-/* IMAGE */
-.course-img-box {
+.homepage-course-img-box {
   position: relative;
-  width: 100%;
   height: 180px;
-  overflow: hidden;
 }
 
-.course-img {
+.homepage-course-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* BADGE */
-.course-badge {
+.homepage-course-level {
   position: absolute;
   bottom: 12px;
   left: 12px;
   background: #ff6b29;
-  color: white;
+  color: #fff;
   padding: 6px 12px;
-  font-size: 13px;
   border-radius: 10px;
-  font-weight: 600;
+  font-size: 13px;
 }
 
-/* BODY */
-.course-body {
+.homepage-course-body {
   padding: 18px;
 }
 
-.course-subtitle {
-  font-size: 17px;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.course-info {
+.homepage-course-info {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -405,47 +164,90 @@
   margin-bottom: 10px;
 }
 
-.course-rating {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  margin-bottom: 18px;
+.homepage-course-subtitle {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 
-.course-btn {
+.homepage-course-btn {
   width: 100%;
   background: #f8e9ea;
-  color: rgb(220, 93, 29);
+  color: #dc5d1d;
   padding: 10px 0;
+  border-radius: 10px;
   font-weight: 600;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.course-btn:hover {
+.homepage-course-btn:hover {
   background: #ff5a12;
 }
 
-@media (max-width: 1024px) {
-  .course-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tb-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .tb-left,
-  .tb-right {
-    width: 100%;
-  }
+/* ===================== FOOTER ===================== */
+:root {
+  --orange-1: #e4542b;
+  --orange-2: #d9532d;
+  --orange-3: #f07b4b;
 }
 
-@media (max-width: 600px) {
-  .course-grid {
-    grid-template-columns: 1fr;
-  }
+.homepage-footer {
+  background: linear-gradient(135deg, var(--orange-1), var(--orange-3));
+  color: white;
+  padding: 36px 20px;
+}
+
+.homepage-footer-top {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.homepage-footer-logo {
+  width: 56px;
+}
+
+.homepage-footer-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.homepage-footer-body {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 220px 1fr;
+  gap: 24px;
+}
+
+.homepage-col-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.homepage-contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.homepage-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.homepage-social-btn {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.homepage-footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
 }
