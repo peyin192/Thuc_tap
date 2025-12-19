@@ -1,5 +1,5 @@
 import "./HomePage.css";
-import logo from "../img/Logo.png";
+import logo from "../img/mankailogo.png";
 import searchIcon from "../img/search-normal.png";
 import avatarImg from "../img/Avatar.png";
 import notification from "../img/notification.png";
@@ -16,16 +16,28 @@ import book from "../img/book.png";
 import profiler from "../img/profile.png";
 import iconHome from "../img/home.png";
 import iconBook from "../img/book (1).png";
+import { useNavigate } from "react-router-dom";
+
+type Course = {
+  id: number;
+  title: string;
+  subtitle: string;
+  lessons: string;
+  teacher: string;
+  rating?: string;
+  image: string;
+};
 
 export default function Dashboard() {
-  const courses = [
+  const navigate = useNavigate();
+  const courses: Course[] = [
     {
       id: 1,
       title: "N1 CHILL CLASS",
       subtitle: "N1 Chill Class",
       lessons: "30 buổi",
       teacher: "Giang Sensei",
-      image: 2,
+      image: img2,
     },
     {
       id: 2,
@@ -33,7 +45,7 @@ export default function Dashboard() {
       subtitle: "N2 Chill Class",
       lessons: "24 buổi",
       teacher: "Giang Sensei",
-      image: 2,
+      image: img2,
     },
     {
       id: 3,
@@ -42,7 +54,7 @@ export default function Dashboard() {
       lessons: "16 buổi",
       teacher: "Giang Sensei",
       rating: "4.9",
-      image: 2,
+      image: img2,
     },
     {
       id: 4,
@@ -51,23 +63,32 @@ export default function Dashboard() {
       lessons: "12 buổi",
       teacher: "Giang Sensei",
       rating: "4.7",
-      image: 2,
+      image: img2,
     },
   ];
+
   return (
     <div className="home-container">
       <header className="header">
         <div className="header-left">
-          <img src={logo} alt="Logo" className="logo" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo"
+            onClick={() => navigate("/")}
+          />
 
           <nav className="nav">
             <span className="nav-item active">
-              {" "}
-              <img src={iconHome} /> Trang chủ
+              <img
+                src={iconHome}
+                alt="Home"
+                onClick={() => navigate("/HomePage")}
+              />{" "}
+              Trang chủ
             </span>
-            <span className="nav-item">
-              {" "}
-              <img src={iconBook} /> Bài viết
+            <span className="nav-item" onClick={() => navigate("/Article")}>
+              <img src={iconBook} alt="Blog" /> Bài viết
             </span>
           </nav>
         </div>
@@ -78,10 +99,10 @@ export default function Dashboard() {
           <img src={avatarImg} className="avatar" alt="Avatar" />
         </div>
       </header>
+
       <div className="tb-container">
         <div className="tb-left">
           <span className="tb-quote">“</span>
-
           <p className="tb-text">
             Hạnh phúc là điểm khởi đầu của giáo dục và cũng là đích đến cuối
             cùng. Giang, với <strong>hơn 10 năm kinh nghiệm</strong> giảng dạy
@@ -90,7 +111,6 @@ export default function Dashboard() {
             là mục tiêu phát triển bản thân mà còn là hành trình hạnh phúc để
             hiện thực hóa những giấc mơ..
           </p>
-
           <span className="tb-quote right">”</span>
         </div>
 
@@ -104,22 +124,26 @@ export default function Dashboard() {
 
         <div className="course-grid">
           {courses.map((c) => (
-            <div key={c.id} className="course-card">
+            <div
+              key={c.id}
+              className="course-card"
+              onClick={() => navigate("/Elearning")}
+            >
               <div className="course-img-box">
-                <img src={img2} alt={c.title} className="course-img" />
+                <img src={c.image} alt={c.title} className="course-img" />
                 <span className="course-level">Beginner</span>
               </div>
 
               <div className="course-body">
                 <div className="course-info">
                   <span>
-                    <img src={clock} /> 360 phút
+                    <img src={clock} alt="Clock" /> 360 phút
                   </span>
                   <span>
-                    <img src={book} /> {c.lessons}
+                    <img src={book} alt="Lessons" /> {c.lessons}
                   </span>
                   <span>
-                    <img src={profiler} /> {c.teacher}
+                    <img src={profiler} alt="Teacher" /> {c.teacher}
                   </span>
                 </div>
 
@@ -133,6 +157,7 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
+
       <footer className="site-footer" role="contentinfo">
         <div className="footer-top">
           <img
@@ -150,7 +175,7 @@ export default function Dashboard() {
             <h3 className="col-title">THÔNG TIN LIÊN HỆ</h3>
             <ul className="contact-list">
               <li>
-                <img src={iconAddress} alt="Search" className="icon" />
+                <img src={iconAddress} alt="Address" className="icon" />
                 <div>
                   <strong>Địa chỉ:</strong>
                   <div>
@@ -159,14 +184,14 @@ export default function Dashboard() {
                 </div>
               </li>
               <li>
-                <img src={iconHotline} alt="Search" className="icon" />
+                <img src={iconHotline} alt="Hotline" className="icon" />
                 <div>
                   <strong>Hotline:</strong>
                   <div>0835 662 538</div>
                 </div>
               </li>
               <li>
-                <img src={iconEmail} alt="Search" className="icon" />
+                <img src={iconEmail} alt="Email" className="icon" />
                 <div>
                   <strong>Email:</strong>
                   <div>support@mankai.edu.vn</div>
@@ -179,14 +204,14 @@ export default function Dashboard() {
             <h3 className="col-title">THEO DÕI CHÚNG TÔI TẠI</h3>
             <div className="social-icons" aria-hidden>
               <a href="#" className="social-btn" aria-label="Facebook">
-                <img src={iconfacebook} />
+                <img src={iconfacebook} alt="Facebook" />
               </a>
               <a
                 href="https://www.youtube.com/@RikkeiEducation"
                 className="social-btn"
                 aria-label="Youtube"
               >
-                <img src={iconyoutube} />
+                <img src={iconyoutube} alt="Youtube" />
               </a>
             </div>
           </div>

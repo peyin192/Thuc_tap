@@ -7,13 +7,15 @@ import {
   useNavigate,
   Outlet,
 } from "react-router-dom";
-
+import Dashboard from "./dashboard/Dashboard";
+import HomePage from "./homePage/HomePage";
+import Article from "./article/Article";
+import ArticleDetails from "./article/ArticleDetails";
+import Elearning from "./elearning/Elearning";
 import Overview from "./views/Overview";
 import Scores from "./views/Scores";
 import Attendance from "./views/Attendance";
 import Submission from "./views/Submission";
-
-import Article from "./article/Article";
 
 import ManagerStudent from "./admin/ManagerStudent/ManagerStudent";
 import ManagerTeacher from "./admin/ManagerTeacher/ManagerTeacher";
@@ -23,7 +25,6 @@ import Statisic from "./admin/StatisicStudent/statisic";
 
 import { ToastContainer } from "react-toastify";
 // import StudentLayout from "./components/layout/StudentLayout";
-import Dashboard from "./dashboard/Dashboard";
 import Sidebar from "./components/training-manager/Sidebar";
 import ClassManager from "./admin/ManagerClasses/ClassManager";
 
@@ -64,6 +65,11 @@ export default function App() {
       />
 
       <Routes>
+        <Route path="/HomePage" element={<HomePage />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/article" element={<Article />} />
+        <Route path="/articleDetails" element={<ArticleDetails />} />
+        <Route path="/elearning" element={<Elearning />} />
         {/*DASHBOARD ELERNING */}
         <Route path="/" element={<Dashboard />} />
         {/* STUDENT LAYOUT */}
