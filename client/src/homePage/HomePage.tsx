@@ -68,42 +68,49 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="home-container">
-      <header className="header">
-        <div className="header-left">
+    <div className="homepage-container">
+      <header className="homepage-header">
+        <div className="homepage-header-left">
           <img
             src={logo}
             alt="Logo"
-            className="logo"
+            className="homepage-logo"
             onClick={() => navigate("/")}
           />
 
-          <nav className="nav">
-            <span className="nav-item active">
+          <nav className="homepage-nav">
+            <span className="homepage-nav-item homepage-active">
               <img
                 src={iconHome}
                 alt="Home"
                 onClick={() => navigate("/HomePage")}
-              />{" "}
+              />
               Trang chủ
             </span>
-            <span className="nav-item" onClick={() => navigate("/Article")}>
+            <span
+              className="homepage-nav-item"
+              onClick={() => navigate("/Article")}
+            >
               <img src={iconBook} alt="Blog" /> Bài viết
             </span>
           </nav>
         </div>
 
-        <div className="header-actions">
-          <img src={searchIcon} alt="Search" className="icon" />
-          <img src={notification} alt="Notification" className="icon" />
-          <img src={avatarImg} className="avatar" alt="Avatar" />
+        <div className="homepage-header-actions">
+          <img src={searchIcon} alt="Search" className="homepage-icon" />
+          <img
+            src={notification}
+            alt="Notification"
+            className="homepage-icon"
+          />
+          <img src={avatarImg} className="homepage-avatar" alt="Avatar" />
         </div>
       </header>
 
-      <div className="tb-container">
-        <div className="tb-left">
-          <span className="tb-quote">“</span>
-          <p className="tb-text">
+      <div className="homepage-tb-container">
+        <div className="homepage-tb-left">
+          <span className="homepage-tb-quote">“</span>
+          <p className="homepage-tb-text">
             Hạnh phúc là điểm khởi đầu của giáo dục và cũng là đích đến cuối
             cùng. Giang, với <strong>hơn 10 năm kinh nghiệm</strong> giảng dạy
             và luyện thi JLPT, mong muốn giúp học viên rút ngắn thời gian và
@@ -111,31 +118,39 @@ export default function Dashboard() {
             là mục tiêu phát triển bản thân mà còn là hành trình hạnh phúc để
             hiện thực hóa những giấc mơ..
           </p>
-          <span className="tb-quote right">”</span>
+          <span className="homepage-tb-quote homepage-right">”</span>
         </div>
 
-        <div className="tb-right">
-          <img src={imggiang} alt="Giang Sensei" className="tb-image" />
+        <div className="homepage-tb-right">
+          <img
+            src={imggiang}
+            alt="Giang Sensei"
+            className="homepage-tb-image"
+          />
         </div>
       </div>
 
-      <div className="course-container">
-        <h2 className="course-title">TẤT CẢ KHÓA HỌC</h2>
+      <div className="homepage-course-container">
+        <h2 className="homepage-course-title">TẤT CẢ KHÓA HỌC</h2>
 
-        <div className="course-grid">
+        <div className="homepage-course-grid">
           {courses.map((c) => (
             <div
               key={c.id}
-              className="course-card"
+              className="homepage-course-card"
               onClick={() => navigate("/Elearning")}
             >
-              <div className="course-img-box">
-                <img src={c.image} alt={c.title} className="course-img" />
-                <span className="course-level">Beginner</span>
+              <div className="homepage-course-img-box">
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  className="homepage-course-img"
+                />
+                <span className="homepage-course-level">Beginner</span>
               </div>
 
-              <div className="course-body">
-                <div className="course-info">
+              <div className="homepage-course-body">
+                <div className="homepage-course-info">
                   <span>
                     <img src={clock} alt="Clock" /> 360 phút
                   </span>
@@ -147,9 +162,9 @@ export default function Dashboard() {
                   </span>
                 </div>
 
-                <h3 className="course-subtitle">{c.subtitle}</h3>
+                <h3 className="homepage-course-subtitle">{c.subtitle}</h3>
 
-                <button className="course-btn">
+                <button className="homepage-course-btn">
                   HỌC NGAY <span>↗</span>
                 </button>
               </div>
@@ -158,24 +173,28 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <footer className="site-footer" role="contentinfo">
-        <div className="footer-top">
+      <footer className="homepage-site-footer" role="contentinfo">
+        <div className="homepage-footer-top">
           <img
             src={makailogo}
             alt="Mankai Academy logo"
-            className="footer-logo"
+            className="homepage-footer-logo"
           />
-          <h2 className="footer-title">
+          <h2 className="homepage-footer-title">
             MANKAI ACADEMY - HỌC VIỆN ĐÀO TẠO PHÁT TRIỂN TIẾNG NHẬT THỰC CHIẾN
           </h2>
         </div>
 
-        <div className="footer-body">
-          <div className="col contact">
-            <h3 className="col-title">THÔNG TIN LIÊN HỆ</h3>
-            <ul className="contact-list">
+        <div className="homepage-footer-body">
+          <div className="homepage-col homepage-contact">
+            <h3 className="homepage-col-title">THÔNG TIN LIÊN HỆ</h3>
+            <ul className="homepage-contact-list">
               <li>
-                <img src={iconAddress} alt="Address" className="icon" />
+                <img
+                  src={iconAddress}
+                  alt="Address"
+                  className="homepage-icon"
+                />
                 <div>
                   <strong>Địa chỉ:</strong>
                   <div>
@@ -184,14 +203,18 @@ export default function Dashboard() {
                 </div>
               </li>
               <li>
-                <img src={iconHotline} alt="Hotline" className="icon" />
+                <img
+                  src={iconHotline}
+                  alt="Hotline"
+                  className="homepage-icon"
+                />
                 <div>
                   <strong>Hotline:</strong>
                   <div>0835 662 538</div>
                 </div>
               </li>
               <li>
-                <img src={iconEmail} alt="Email" className="icon" />
+                <img src={iconEmail} alt="Email" className="homepage-icon" />
                 <div>
                   <strong>Email:</strong>
                   <div>support@mankai.edu.vn</div>
@@ -200,15 +223,15 @@ export default function Dashboard() {
             </ul>
           </div>
 
-          <div className="col social">
-            <h3 className="col-title">THEO DÕI CHÚNG TÔI TẠI</h3>
-            <div className="social-icons" aria-hidden>
-              <a href="#" className="social-btn" aria-label="Facebook">
+          <div className="homepage-col homepage-social">
+            <h3 className="homepage-col-title">THEO DÕI CHÚNG TÔI TẠI</h3>
+            <div className="homepage-social-icons" aria-hidden>
+              <a href="#" className="homepage-social-btn" aria-label="Facebook">
                 <img src={iconfacebook} alt="Facebook" />
               </a>
               <a
                 href="https://www.youtube.com/@RikkeiEducation"
-                className="social-btn"
+                className="homepage-social-btn"
                 aria-label="Youtube"
               >
                 <img src={iconyoutube} alt="Youtube" />
@@ -216,7 +239,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="col quote">
+          <div className="homepage-col homepage-quote">
             <blockquote>
               <p>
                 “Hạnh phúc là điểm khởi đầu của giáo dục và cũng là đích đến
@@ -229,7 +252,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="footer-bottom">
+        <div className="homepage-footer-bottom">
           <small>
             © 2024 By Mankai Academy - Mankai Education. All rights reserved.
           </small>
