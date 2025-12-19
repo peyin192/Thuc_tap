@@ -173,7 +173,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <footer className="homepage-site-footer" role="contentinfo">
+      <footer className="homepage-footer" role="contentinfo">
         <div className="homepage-footer-top">
           <img
             src={makailogo}
@@ -186,6 +186,7 @@ export default function Dashboard() {
         </div>
 
         <div className="homepage-footer-body">
+          {/* Contact */}
           <div className="homepage-col homepage-contact">
             <h3 className="homepage-col-title">THÔNG TIN LIÊN HỆ</h3>
             <ul className="homepage-contact-list">
@@ -223,6 +224,7 @@ export default function Dashboard() {
             </ul>
           </div>
 
+          {/* Social */}
           <div className="homepage-col homepage-social">
             <h3 className="homepage-col-title">THEO DÕI CHÚNG TÔI TẠI</h3>
             <div className="homepage-social-icons" aria-hidden>
@@ -239,6 +241,7 @@ export default function Dashboard() {
             </div>
           </div>
 
+          {/* Quote */}
           <div className="homepage-col homepage-quote">
             <blockquote>
               <p>
